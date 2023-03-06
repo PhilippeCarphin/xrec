@@ -55,7 +55,7 @@ int c_gmpinit()
 
 
   if (gmp_init_done == 1)
-    return;
+    return 0;
 
   for (i=0; i < NMAP_FLAGS; i++)
     {

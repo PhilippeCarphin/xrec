@@ -2566,7 +2566,7 @@ int32_t XSelectstdActiver(int32_t  sel[], int32_t  *nbsel, int32_t  *indSelecteu
    Widget widgetParent, bouton;
    
    if (!xs[wi].topLevel)
-      return;
+      return 0;
    
    xs[wi].StatutSelection = SELECTION_EN_COURS;
    while (xs[wi].StatutSelection == SELECTION_EN_COURS && XtIsRealized(xs[wi].topLevel))
@@ -3023,7 +3023,7 @@ c_xselopt(int32_t indSelecteur, char *option, char *valeur)
    xs[indSelecteur].statutBoutonFermer = BOUTON_FERMER_ACTIF;
       else
    xs[indSelecteur].statutBoutonFermer = BOUTON_FERMER_INACTIF;
-      return;
+      return 0;
       }
    
    printf("Mauvaise option: %s\n", option);

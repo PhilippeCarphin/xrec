@@ -35,7 +35,7 @@ int SetGeometrieFenetreAffichage(char *nomFenetre)
    
    geometrie = (char *) XGetDefault(XtDisplay(SuperWidget.topLevel), nomFenetre, "geometry");
    if (!geometrie)
-      return;
+      return 0;
 
    geoParams = XParseGeometry(geometrie, &x, &y, &width, &height);
    

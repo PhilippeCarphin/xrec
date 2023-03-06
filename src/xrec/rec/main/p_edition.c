@@ -762,7 +762,7 @@ XtCallbackProc PeEnregistrer(Widget w, caddr_t clientData, caddr_t  callData)
       DesactiverTousPeWidgets();
       MessageAvertissementAux(problemeFnom[lng], AVERTISSEMENT, peWarning, peTopLevel);
       ActiverTousPeWidgets();
-      return;
+      return NULL;
       }
    
    i = 0;

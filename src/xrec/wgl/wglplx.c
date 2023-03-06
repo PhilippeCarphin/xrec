@@ -19,6 +19,7 @@
  */
 
 #include <wgl.h>
+#include <stdlib.h> // for malloc
 
 f77name(wglplx)(int *nbPoints, float polygone[][2])
 {
@@ -30,13 +31,13 @@ f77name(wglplx)(int *nbPoints, float polygone[][2])
  **/
 
 
-c_wglplx(int nbPoints, float polygone[][2])
+int c_wglplx(int nbPoints, float polygone[][2])
 {
   int i;
   
   int p[512], *ipoly, *largeP;
   
-  if (nbPoints == 0) return;
+  if (nbPoints == 0) return 0;
   if (nbPoints > 256)
     {
     largeP = (int *) malloc(2*sizeof(int)*nbPoints);

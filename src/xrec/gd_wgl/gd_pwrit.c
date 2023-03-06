@@ -20,13 +20,12 @@
 
 #include <stdio.h>
 #include <rmn/rpnmacros.h>
-#include <wgl.h>
-
+#include "wgl.h"
+#include "gd_wglfonct.h"
 
 int gd_currentFontSize = 12;
 
-int gd_wglfsz(fontSize)
-int fontSize;
+int gd_wglfsz(int fontSize)
 {
   /*   if (fontSize != gd_currentFontSize) 
       InitFonte(fontSize);

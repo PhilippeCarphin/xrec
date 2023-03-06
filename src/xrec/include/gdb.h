@@ -19,7 +19,9 @@
 #ifndef include_GDB
 #define include_GDB
 
+#include <sys/types.h> // for caddr_t (just use void* no?)
 #include "declare.h"
+
 
  __BEGIN_DECLS
 

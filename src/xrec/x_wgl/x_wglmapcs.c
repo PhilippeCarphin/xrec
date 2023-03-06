@@ -20,7 +20,7 @@
 
 #include <wgl_x.h>
 
-x_wglmapcs(int colorIndexs[], int nbCols, int rgbDefs[][3])
+int x_wglmapcs(int colorIndexs[], int nbCols, int rgbDefs[][3])
 {
    int i, increment;
    XColor cols[256];
@@ -44,7 +44,7 @@ x_wglmapcs(int colorIndexs[], int nbCols, int rgbDefs[][3])
                     rgbDefs[lastInd][1],rgbDefs[lastInd][2]);
             }
 	 }
-      return;
+      return 0;
       }
 
 
@@ -54,7 +54,7 @@ x_wglmapcs(int colorIndexs[], int nbCols, int rgbDefs[][3])
          {
          wglmapc(colorIndexs[i],rgbDefs[i][0], rgbDefs[i][1],rgbDefs[i][2]);
 	 }
-      return;
+      return 0;
       }
 
    for (i=0; i < nbCols; i++)
@@ -74,7 +74,7 @@ x_wglmapcs(int colorIndexs[], int nbCols, int rgbDefs[][3])
       {
       colorIndexs[i] = colorIndexs[i] % 256;
       if (colorIndexs[i] < 32 && !customPlaneMask)
-	 return;
+	 return 0;
       
       if (debugMode)
 	 printf("indice: %d %d\n", i, colorIndexs[i]);

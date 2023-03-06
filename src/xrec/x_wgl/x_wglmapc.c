@@ -20,7 +20,7 @@
 
 #include <wgl_x.h>
 
-x_wglmapc(int colorIndex, int r, int g, int b)
+int x_wglmapc(int colorIndex, int r, int g, int b)
 {
    int res;
    XColor xcol;
@@ -35,7 +35,7 @@ x_wglmapc(int colorIndex, int r, int g, int b)
      }
    
    if (colorIndex < 32 && !customPlaneMask)
-     return;
+     return 0;
    
    if (debugMode)
      printf("indice: %d\n", colorIndex);

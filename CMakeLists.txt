@@ -56,6 +56,10 @@ if (EXISTS ${CMAKE_SOURCE_DIR}/src/rmn/CMakeLists.txt)
 else()
   find_package(rmn ${rmn_REQ_VERSION} CONFIG)
 endif()
+find_package(PNG REQUIRED)
+find_package(X11 REQUIRED)
+find_package(Motif REQUIRED)
+find_package(JPEG REQUIRED)
   
 add_subdirectory(src/xrec xrec)
 

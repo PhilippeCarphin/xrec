@@ -192,7 +192,7 @@ int  *i,  *j;
 
      *ltype = 1;
 
-     return;
+     return 0;
      }
 
 
@@ -247,7 +247,7 @@ int  *i,  *j;
      {
      *x = lst_x;
      *y = lst_y;
-     return;
+     return 0;
      }
 
 
@@ -280,7 +280,7 @@ int  *i,  *j;
 /*
  *  l'option est dupliquee parce que en fortan il n'y a pas de \0 a la fin
  */
-     if( len > 9 ) return;
+     if( len > 9 ) return 0;
      strncpy( dup, xoptn, 2 );
      dup[2] = '\0';
 
@@ -329,6 +329,7 @@ int  *i,  *j;
            case 26 : /* VSPACE     */                break;
            }
 
+     return 0;
      }
 
 
@@ -361,7 +362,7 @@ int  *i,  *j;
 /*
  *  l'option est dupliquee parce que en fortan il n'y a pas de \0 a la fin
  */
-     if( len > 9 ) return;
+     if( len > 9 ) return 0;
      strncpy( dup, xoptn, 2 );
      dup[2] = '\0';
 
@@ -523,7 +524,7 @@ int *i, *j, *flag;
      lst_y = *y;
      if( *down == 0 ) c_wglmvi(*x,*y);
      if( *down == 1 ) c_wgldri(*x,*y);
-     return;
+     return 0;
      }
 
 
@@ -693,7 +694,7 @@ int *i, *j, *flag;
 
 /**     set_vcar(bidon,  FONTE, 0, 0 ); **/
 
-     return;
+     return 0;
      }
 
 
@@ -727,7 +728,7 @@ F2Cl flen;
       }
 
    if (!caractereTrouve)
-      return;
+      return 0;
 
    dimensionFonte = (int)(*size * 0.667);
    dimensionFonte = (int)(*size);

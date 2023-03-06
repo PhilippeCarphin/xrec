@@ -21,10 +21,10 @@
 
 #include <wgl_x.h>
 
-x_wglsavpfc()
+int x_wglsavpfc()
 {
    if (fenetreCourante < 0)
-      return;
+      return 0;
 
    fenetre[fenetreCourante].wglWin = wglWin;
    fenetre[fenetreCourante].wglDrawable = wglDrawable;

@@ -19,6 +19,7 @@
 #ifndef include_RGIS
 #define include_RGIS
 
+#include <sys/types.h> // for caddr_t
 #include "declare.h"
 
  __BEGIN_DECLS
@@ -83,7 +84,6 @@ typedef int32_t  addr32_t;
  *  of independant latitude longitude coordinates
  *  an a table of integer value associated with it
  */
-
  typedef struct { char     magic  [4];
                   char     version[4];
                   char     datanam[4];

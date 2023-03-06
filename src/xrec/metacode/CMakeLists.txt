@@ -17,19 +17,20 @@ message(STATUS "(EC) xmetaview VERSION = ${XMETAVIEW_VERSION}")
 
 add_library (metacode STATIC ${F_FILES})
 
-set(EXTRA_LIBRARIES "-lXm -lXt -lSM -lICE -lXext -lX11 -lz -lpng -lm -ldl -ljpeg")
+set(EXTRA_LIBRARIES "-lz -lm -ldl")
 
 add_executable(trames praster.f)
 set(FULL_TRAMES_NAME trames_${TRAMES_VERSION})
 set_target_properties(trames PROPERTIES OUTPUT_NAME ${FULL_TRAMES_NAME})
 add_dependencies(trames metacode rec rec_util wgl gd_wgl x_wgl gdb gd png ${rmn_SRC})
-target_link_libraries(trames metacode rec rec_util wgl gd_wgl x_wgl wgl gdb gd png rmn ${EXTRA_LIBRARIES} )
+target_link_libraries(trames metacode rec rec_util wgl gd_wgl x_wgl wgl gdb gd PNG::PNG rmn ${MOTIF_LIBRARIES} X11::X11 X11::Xt ${EXTRA_LIBRARIES} )
+target_link_options(trames PRIVATE -undefined dynamic_lookup)
 
 add_executable(xmetaview pmetaview.f)
 set(FULL_XMETAVIEW_NAME xmetaview_${XMETAVIEW_VERSION})
 set_target_properties(xmetaview PROPERTIES OUTPUT_NAME ${FULL_XMETAVIEW_NAME})
 add_dependencies(xmetaview metacode rec rec_util wgl gd_wgl x_wgl gdb gd png ${rmn_SRC})
-target_link_libraries(xmetaview metacode rec rec_util wgl gd_wgl x_wgl wgl gdb gd png rmn ${EXTRA_LIBRARIES} )
+target_link_libraries(xmetaview metacode rec rec_util wgl gd_wgl x_wgl wgl gdb gd png rmn ${MOTIF_LIBRARIES} X11::X11 X11::Xt X11::SM X11::ICE X11::Xext JPEG::JPEG ${EXTRA_LIBRARIES} )
 
 add_custom_command(TARGET trames POST_BUILD
    # Symbolic links to latest build

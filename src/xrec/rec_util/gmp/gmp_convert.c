@@ -48,7 +48,7 @@ int gmp_convert(ListePointsStruct *liste, int *nbItems, float pts[], int nbPoint
    if (npts > 24000 || npts == 0)
      {      
      fprintf(stderr,"Erreur: npts = %d\n", npts);
-     return;
+     return 0;
      }
 
    for (i=0; i < npts; i++)
@@ -78,7 +78,7 @@ int gmp_convert(ListePointsStruct *liste, int *nbItems, float pts[], int nbPoint
    if (npts <= 0)
      {
      fprintf(stderr,"<gmp_convert: npts negatif! : %d\n", npts);
-     return;
+     return 0;
      }
    liste[currentItem].npts = npts;
    liste[currentItem].statutPRGrille = 1;

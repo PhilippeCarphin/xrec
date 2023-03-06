@@ -6,4 +6,5 @@ file(GLOB C_FILES  *.c)
 
 add_library (gd STATIC ${C_FILES})
 target_include_directories(gd PRIVATE ${CMAKE_SOURCE_DIR}/src/xrec/include)
+target_link_libraries(gd PRIVATE PNG::PNG)
 

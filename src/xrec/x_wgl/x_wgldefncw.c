@@ -19,8 +19,10 @@
  */
 
 #include <wgl_x.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-x_wgldefncw(int winid)
+int x_wgldefncw(int winid)
 {
    int i = 0;
    
@@ -30,7 +32,7 @@ x_wgldefncw(int winid)
    if (i == nbFenetresActives)
       {
       if (i == 0) nbFenetresActives = -1;
-      return;
+      return 0;
       printf("Fenetre non existante\n\n");
       exit(1);
       

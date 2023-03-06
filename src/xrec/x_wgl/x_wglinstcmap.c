@@ -20,13 +20,13 @@
 
 #include <wgl_x.h>
 
-x_wglinstcmap()
+int x_wglinstcmap()
 {
    int i;
 
    if (cmap_strategy == READ_ONLY_COLORMAP)
       {
-      return;
+      return 0;
       }
    
    for (i=0; i < 256; i++)

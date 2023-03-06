@@ -12,7 +12,7 @@
 #include <sys/times.h>
 #include <sys/param.h>
 
-#ifdef Darwin_OSX_PPC
+#if defined(Darwin_OSX_PPC) || defined(__APPLE__)
 #include <limits.h>
 #define HZ CLK_TCK
 #endif

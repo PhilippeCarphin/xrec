@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include "gd.h"
 #include "gdhelpers.h"
-#include "png.h"		/* includes zlib.h and setjmp.h */
+#include <png.h>		/* includes zlib.h and setjmp.h */
 
 #define TRUE 1
 #define FALSE 0

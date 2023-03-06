@@ -34,7 +34,7 @@ gmp_trim(float pts[], int *nbpts, float resolution)
    newpts[1] = pts[1];
 
    if (*nbpts <= 2)
-      return;
+      return 0;
 
    j = 2;
    for (i=2; i < *nbpts; i+=2)

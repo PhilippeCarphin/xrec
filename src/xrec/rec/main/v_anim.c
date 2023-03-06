@@ -32,7 +32,7 @@
 #include <sys/times.h>
 #include <sys/param.h>
    
-#if defined (Darwin_OSX_PPC)
+#if defined (Darwin_OSX_PPC) || defined(__APPLE__)
 #else
 #if defined (AIX)
 #else
